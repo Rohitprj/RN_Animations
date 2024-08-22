@@ -1,4 +1,4 @@
-import { View, Text, Animated, Button } from "react-native";
+import { View, Animated, Button } from "react-native";
 import React, { useRef } from "react";
 
 export default function index() {
@@ -16,15 +16,17 @@ export default function index() {
         justifyContent: "center",
       }}
     >
-      <Animated.View style={{ opacity: opacityAnim, }}>
+      <Animated.View style={{ opacity: opacityAnim }}>
         <View style={{ backgroundColor: "orange", height: 60, width: 280 }} />
         <View style={{ backgroundColor: "white", height: 60, width: 280 }} />
         <View style={{ backgroundColor: "green", height: 60, width: 280 }} />
         <View style={{ backgroundColor: "black", height: 160, width: 20 }} />
       </Animated.View>
-      <Button title="Fade start" onPress={() => timeAnim.start()} />
-      <Button title="Fade reset" onPress={() => timeAnim.reset()} />
-      <Button title="Fade stop" onPress={() => timeAnim.stop()} />
+      <View style={{ gap: 10 }}>
+        <Button title="Fade start" onPress={() => timeAnim.start()} />
+        <Button title="Fade reset" onPress={() => timeAnim.reset()} />
+        <Button title="Fade stop" onPress={() => timeAnim.stop()} />
+      </View>
     </View>
   );
 }
